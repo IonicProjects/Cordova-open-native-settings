@@ -1,8 +1,7 @@
 ##Ionic2 integration
 
 1. add plugin using
-ionic plugin add https://github.com/IonicProjects/Cordova-open-native-s
-ettings.git --save
+ionic plugin add https://github.com/IonicProjects/Cordova-open-native-settings.git --save
 
 2. add cordova
 // as the clobber in plugin.xml points to cordova.plugins.settings, declare cordova variable just before the component decorator.
