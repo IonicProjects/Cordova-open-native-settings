@@ -1,3 +1,28 @@
+##Ionic2 integration
+
+1. add plugin using
+ionic plugin add https://github.com/IonicProjects/Cordova-open-native-s
+ettings.git --save
+
+2. add cordova
+// as the clobber in plugin.xml points to cordova.plugins.settings, declare cordova variable just before the component decorator.
+declare var cordova: any;  
+@Component({
+});
+
+3. open settings
+this.platform.ready().then(() => {
+              cordova.plugins.settings.open("nfc_settings", () => {
+                console.log('opened NFC settings');
+              },
+                err => {
+                  alert('failed to open settings ' + err);
+                })
+            })
+
+
+
+
 #NativeSettings plugin for Cordova
 
 The plugin allows you to open OS settings on iOS 8/9/10 and Android, via cordova-based app. For example, it will allow you to open the keyboard settings, Wifi, bluetooth etc (full list below).
